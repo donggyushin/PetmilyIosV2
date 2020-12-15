@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70006D212588FF9C00E507DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70006D202588FF9C00E507DB /* AppDelegate.swift */; };
+		70006D232588FF9C00E507DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70006D222588FF9C00E507DB /* SceneDelegate.swift */; };
+		70006D252588FF9C00E507DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70006D242588FF9C00E507DB /* ViewController.swift */; };
+		70006D282588FF9C00E507DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70006D262588FF9C00E507DB /* Main.storyboard */; };
+		70006D2A2588FF9E00E507DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70006D292588FF9E00E507DB /* Assets.xcassets */; };
+		70006D2D2588FF9E00E507DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70006D2B2588FF9E00E507DB /* LaunchScreen.storyboard */; };
+		7018FFD52589002600FE5078 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFD42589002600FE5078 /* RootController.swift */; };
+		7018FFD92589014100FE5078 /* PuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFD82589014100FE5078 /* PuppyViewController.swift */; };
+		7018FFDE2589015900FE5078 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFDD2589015900FE5078 /* PetViewController.swift */; };
+		7018FFE32589017100FE5078 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFE22589017100FE5078 /* MyViewController.swift */; };
+		70BC0879258904D00045B58B /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC0878258904D00045B58B /* TitleLabel.swift */; };
+		70BC087E258905C80045B58B /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC087D258905C80045B58B /* ViewControllerExtension.swift */; };
+		70BC08822589066C0045B58B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08812589066C0045B58B /* AuthService.swift */; };
+		70BC0885258906950045B58B /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC0884258906950045B58B /* LocalDataService.swift */; };
+		70BC0889258907260045B58B /* AuthKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC0888258907260045B58B /* AuthKeys.swift */; };
+		70BC088D258907B80045B58B /* UnLoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC088C258907B80045B58B /* UnLoggedInView.swift */; };
+		70BC0892258908490045B58B /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC0891258908490045B58B /* LoggedInView.swift */; };
+		70BC0895258909B00045B58B /* ClickableCardViewTypeOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC0894258909B00045B58B /* ClickableCardViewTypeOne.swift */; };
+		70BC089A25890C840045B58B /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC089925890C840045B58B /* ScreenSize.swift */; };
+		70BC08A025890D680045B58B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC089F25890D680045B58B /* AuthController.swift */; };
+		70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */; };
+		A65F494A9AC628435EF66E21 /* Pods_Petmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0B3698BCD557BF5D3BAE40 /* Pods_Petmily.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11A2C85E18BFA0C14CC5706A /* Pods-Petmily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petmily.debug.xcconfig"; path = "Target Support Files/Pods-Petmily/Pods-Petmily.debug.xcconfig"; sourceTree = "<group>"; };
+		70006D1D2588FF9C00E507DB /* Petmily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petmily.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70006D202588FF9C00E507DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70006D222588FF9C00E507DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		70006D242588FF9C00E507DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		70006D272588FF9C00E507DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70006D292588FF9E00E507DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70006D2C2588FF9E00E507DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70006D2E2588FF9E00E507DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7018FFD42589002600FE5078 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		7018FFD82589014100FE5078 /* PuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyViewController.swift; sourceTree = "<group>"; };
+		7018FFDD2589015900FE5078 /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
+		7018FFE22589017100FE5078 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		70BC0878258904D00045B58B /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		70BC087D258905C80045B58B /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		70BC08812589066C0045B58B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		70BC0884258906950045B58B /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
+		70BC0888258907260045B58B /* AuthKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeys.swift; sourceTree = "<group>"; };
+		70BC088C258907B80045B58B /* UnLoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnLoggedInView.swift; sourceTree = "<group>"; };
+		70BC0891258908490045B58B /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
+		70BC0894258909B00045B58B /* ClickableCardViewTypeOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableCardViewTypeOne.swift; sourceTree = "<group>"; };
+		70BC089925890C840045B58B /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		70BC089F25890D680045B58B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewTypeOne.swift; sourceTree = "<group>"; };
+		F7BC640EDD1AE72E4E3EEE2E /* Pods-Petmily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petmily.release.xcconfig"; path = "Target Support Files/Pods-Petmily/Pods-Petmily.release.xcconfig"; sourceTree = "<group>"; };
+		FF0B3698BCD557BF5D3BAE40 /* Pods_Petmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70006D1A2588FF9C00E507DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A65F494A9AC628435EF66E21 /* Pods_Petmily.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		258BA768FB5EFE6FDC1EB5E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11A2C85E18BFA0C14CC5706A /* Pods-Petmily.debug.xcconfig */,
+				F7BC640EDD1AE72E4E3EEE2E /* Pods-Petmily.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		70006D142588FF9C00E507DB = {
+			isa = PBXGroup;
+			children = (
+				70006D1F2588FF9C00E507DB /* Petmily */,
+				70006D1E2588FF9C00E507DB /* Products */,
+				258BA768FB5EFE6FDC1EB5E1 /* Pods */,
+				88B3E0B8CA612E434840B8FE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		70006D1E2588FF9C00E507DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70006D1D2588FF9C00E507DB /* Petmily.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70006D1F2588FF9C00E507DB /* Petmily */ = {
+			isa = PBXGroup;
+			children = (
+				70BC089825890C7A0045B58B /* Properties */,
+				70BC0887258907180045B58B /* Keys */,
+				70BC08802589065E0045B58B /* Services */,
+				70BC087C258905B50045B58B /* Extensions */,
+				70BC0877258904BE0045B58B /* Views */,
+				7018FFD22589001200FE5078 /* Controllers */,
+				70006D202588FF9C00E507DB /* AppDelegate.swift */,
+				70006D222588FF9C00E507DB /* SceneDelegate.swift */,
+				70006D242588FF9C00E507DB /* ViewController.swift */,
+				70006D262588FF9C00E507DB /* Main.storyboard */,
+				70006D292588FF9E00E507DB /* Assets.xcassets */,
+				70006D2B2588FF9E00E507DB /* LaunchScreen.storyboard */,
+				70006D2E2588FF9E00E507DB /* Info.plist */,
+			);
+			path = Petmily;
+			sourceTree = "<group>";
+		};
+		7018FFD22589001200FE5078 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70BC089E25890D4E0045B58B /* Auth */,
+				7018FFE02589015B00FE5078 /* My */,
+				7018FFDC2589015000FE5078 /* Pet */,
+				7018FFD72589010A00FE5078 /* Puppy */,
+				7018FFD42589002600FE5078 /* RootController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7018FFD72589010A00FE5078 /* Puppy */ = {
+			isa = PBXGroup;
+			children = (
+				7018FFD82589014100FE5078 /* PuppyViewController.swift */,
+			);
+			path = Puppy;
+			sourceTree = "<group>";
+		};
+		7018FFDC2589015000FE5078 /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				7018FFDD2589015900FE5078 /* PetViewController.swift */,
+			);
+			path = Pet;
+			sourceTree = "<group>";
+		};
+		7018FFE02589015B00FE5078 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				7018FFE22589017100FE5078 /* MyViewController.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		70BC0877258904BE0045B58B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70BC088B258907A10045B58B /* My */,
+				70BC0878258904D00045B58B /* TitleLabel.swift */,
+				70BC0894258909B00045B58B /* ClickableCardViewTypeOne.swift */,
+				70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		70BC087C258905B50045B58B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				70BC087D258905C80045B58B /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70BC08802589065E0045B58B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				70BC08812589066C0045B58B /* AuthService.swift */,
+				70BC0884258906950045B58B /* LocalDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		70BC0887258907180045B58B /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				70BC0888258907260045B58B /* AuthKeys.swift */,
+			);
+			path = Keys;
+			sourceTree = "<group>";
+		};
+		70BC088B258907A10045B58B /* My */ = {
+			isa = PBXGroup;
+			children = (
+				70BC088C258907B80045B58B /* UnLoggedInView.swift */,
+				70BC0891258908490045B58B /* LoggedInView.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		70BC089825890C7A0045B58B /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				70BC089925890C840045B58B /* ScreenSize.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		70BC089E25890D4E0045B58B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				70BC089F25890D680045B58B /* AuthController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		88B3E0B8CA612E434840B8FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B3698BCD557BF5D3BAE40 /* Pods_Petmily.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70006D1C2588FF9C00E507DB /* Petmily */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70006D312588FF9E00E507DB /* Build configuration list for PBXNativeTarget "Petmily" */;
+			buildPhases = (
+				F2509210669DBDFF57246D33 /* [CP] Check Pods Manifest.lock */,
+				70006D192588FF9C00E507DB /* Sources */,
+				70006D1A2588FF9C00E507DB /* Frameworks */,
+				70006D1B2588FF9C00E507DB /* Resources */,
+				8F94C631F21960C2571A7258 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Petmily;
+			productName = Petmily;
+			productReference = 70006D1D2588FF9C00E507DB /* Petmily.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70006D152588FF9C00E507DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					70006D1C2588FF9C00E507DB = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 70006D182588FF9C00E507DB /* Build configuration list for PBXProject "Petmily" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70006D142588FF9C00E507DB;
+			productRefGroup = 70006D1E2588FF9C00E507DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70006D1C2588FF9C00E507DB /* Petmily */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70006D1B2588FF9C00E507DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70006D2D2588FF9E00E507DB /* LaunchScreen.storyboard in Resources */,
+				70006D2A2588FF9E00E507DB /* Assets.xcassets in Resources */,
+				70006D282588FF9C00E507DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F94C631F21960C2571A7258 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Petmily/Pods-Petmily-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Petmily/Pods-Petmily-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Petmily/Pods-Petmily-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2509210669DBDFF57246D33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Petmily-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70006D192588FF9C00E507DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7018FFD92589014100FE5078 /* PuppyViewController.swift in Sources */,
+				70006D252588FF9C00E507DB /* ViewController.swift in Sources */,
+				70BC087E258905C80045B58B /* ViewControllerExtension.swift in Sources */,
+				70BC0889258907260045B58B /* AuthKeys.swift in Sources */,
+				70BC0885258906950045B58B /* LocalDataService.swift in Sources */,
+				70BC089A25890C840045B58B /* ScreenSize.swift in Sources */,
+				70006D212588FF9C00E507DB /* AppDelegate.swift in Sources */,
+				7018FFE32589017100FE5078 /* MyViewController.swift in Sources */,
+				70006D232588FF9C00E507DB /* SceneDelegate.swift in Sources */,
+				70BC0895258909B00045B58B /* ClickableCardViewTypeOne.swift in Sources */,
+				70BC088D258907B80045B58B /* UnLoggedInView.swift in Sources */,
+				70BC0892258908490045B58B /* LoggedInView.swift in Sources */,
+				70BC0879258904D00045B58B /* TitleLabel.swift in Sources */,
+				70BC08A025890D680045B58B /* AuthController.swift in Sources */,
+				70BC08822589066C0045B58B /* AuthService.swift in Sources */,
+				70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */,
+				7018FFDE2589015900FE5078 /* PetViewController.swift in Sources */,
+				7018FFD52589002600FE5078 /* RootController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		70006D262588FF9C00E507DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70006D272588FF9C00E507DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		70006D2B2588FF9E00E507DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70006D2C2588FF9E00E507DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70006D2F2588FF9E00E507DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70006D302588FF9E00E507DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70006D322588FF9E00E507DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11A2C85E18BFA0C14CC5706A /* Pods-Petmily.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YV58Q28W8Z;
+				INFOPLIST_FILE = Petmily/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.petmily.Petmily;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70006D332588FF9E00E507DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7BC640EDD1AE72E4E3EEE2E /* Pods-Petmily.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YV58Q28W8Z;
+				INFOPLIST_FILE = Petmily/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.petmily.Petmily;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70006D182588FF9C00E507DB /* Build configuration list for PBXProject "Petmily" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70006D2F2588FF9E00E507DB /* Debug */,
+				70006D302588FF9E00E507DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70006D312588FF9E00E507DB /* Build configuration list for PBXNativeTarget "Petmily" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70006D322588FF9E00E507DB /* Debug */,
+				70006D332588FF9E00E507DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70006D152588FF9C00E507DB /* Project object */;
+}
