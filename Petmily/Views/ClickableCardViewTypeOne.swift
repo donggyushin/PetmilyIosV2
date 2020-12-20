@@ -16,8 +16,8 @@ class ClickableCardViewTypeOne: UIView {
     // MARK: Properties
     weak var delegate:ClickableCardViewTypeOneProtocol?
     
-    lazy var label:UILabel = {
-        let label = UILabel()
+    lazy var label:SmallDescriptionLabel = {
+        let label = SmallDescriptionLabel()
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -42,7 +42,8 @@ class ClickableCardViewTypeOne: UIView {
         addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+//        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true 
     }
     
     // MARK: Overrides

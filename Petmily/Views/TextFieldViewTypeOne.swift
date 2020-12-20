@@ -10,6 +10,10 @@ import UIKit
 class TextFieldViewTypeOne: UIView {
 
     // MARK: Properties
+    lazy var textField:UITextField = {
+        let tf = UITextField()
+        return tf
+    }()
     
     // MARK: Lifecycles
     override init(frame: CGRect) {
@@ -23,7 +27,16 @@ class TextFieldViewTypeOne: UIView {
     
     // MARK: Configures
     func configureUI(){
+        layer.cornerRadius = 8
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.systemBlue.cgColor
         
+        addSubview(textField)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        textField.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        textField.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        textField.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true 
     }
 
 }

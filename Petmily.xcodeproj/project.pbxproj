@@ -28,6 +28,16 @@
 		70BC089A25890C840045B58B /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC089925890C840045B58B /* ScreenSize.swift */; };
 		70BC08A025890D680045B58B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC089F25890D680045B58B /* AuthController.swift */; };
 		70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */; };
+		70DD2DB8258F70F6003BEAAA /* SmallDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */; };
+		70DD2DBB258F8250003BEAAA /* SignUpAuthNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */; };
+		70DD2DBE258F8A46003BEAAA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DBD258F8A46003BEAAA /* LoadingView.swift */; };
+		70DD2DC2258F8C72003BEAAA /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DC1258F8C72003BEAAA /* ApiEndpoint.swift */; };
+		70DD2DC6258F8ED3003BEAAA /* SignUpUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DC5258F8ED3003BEAAA /* SignUpUsernameController.swift */; };
+		70DD2DCA258F92C7003BEAAA /* RegularExpressionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DC9258F92C7003BEAAA /* RegularExpressionService.swift */; };
+		70DD2DCD258F94B1003BEAAA /* EncodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DCC258F94B1003BEAAA /* EncodingService.swift */; };
+		70DD2DD0258F9B7F003BEAAA /* SignUpPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DCF258F9B7F003BEAAA /* SignUpPasswordController.swift */; };
+		70DD2DD3258FA699003BEAAA /* TextFieldViewForPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DD2258FA699003BEAAA /* TextFieldViewForPassword.swift */; };
+		70DD2DD6258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DD5258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift */; };
 		A65F494A9AC628435EF66E21 /* Pods_Petmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0B3698BCD557BF5D3BAE40 /* Pods_Petmily.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +66,16 @@
 		70BC089925890C840045B58B /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		70BC089F25890D680045B58B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewTypeOne.swift; sourceTree = "<group>"; };
+		70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDescriptionLabel.swift; sourceTree = "<group>"; };
+		70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthNumberController.swift; sourceTree = "<group>"; };
+		70DD2DBD258F8A46003BEAAA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		70DD2DC1258F8C72003BEAAA /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		70DD2DC5258F8ED3003BEAAA /* SignUpUsernameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUsernameController.swift; sourceTree = "<group>"; };
+		70DD2DC9258F92C7003BEAAA /* RegularExpressionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpressionService.swift; sourceTree = "<group>"; };
+		70DD2DCC258F94B1003BEAAA /* EncodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingService.swift; sourceTree = "<group>"; };
+		70DD2DCF258F9B7F003BEAAA /* SignUpPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordController.swift; sourceTree = "<group>"; };
+		70DD2DD2258FA699003BEAAA /* TextFieldViewForPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewForPassword.swift; sourceTree = "<group>"; };
+		70DD2DD5258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableImageViewForLongTouch.swift; sourceTree = "<group>"; };
 		F7BC640EDD1AE72E4E3EEE2E /* Pods-Petmily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petmily.release.xcconfig"; path = "Target Support Files/Pods-Petmily/Pods-Petmily.release.xcconfig"; sourceTree = "<group>"; };
 		FF0B3698BCD557BF5D3BAE40 /* Pods_Petmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +122,7 @@
 		70006D1F2588FF9C00E507DB /* Petmily */ = {
 			isa = PBXGroup;
 			children = (
+				70DD2DC0258F8C42003BEAAA /* Constants */,
 				70BC089825890C7A0045B58B /* Properties */,
 				70BC0887258907180045B58B /* Keys */,
 				70BC08802589065E0045B58B /* Services */,
@@ -162,6 +183,10 @@
 				70BC0878258904D00045B58B /* TitleLabel.swift */,
 				70BC0894258909B00045B58B /* ClickableCardViewTypeOne.swift */,
 				70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */,
+				70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */,
+				70DD2DBD258F8A46003BEAAA /* LoadingView.swift */,
+				70DD2DD2258FA699003BEAAA /* TextFieldViewForPassword.swift */,
+				70DD2DD5258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +204,8 @@
 			children = (
 				70BC08812589066C0045B58B /* AuthService.swift */,
 				70BC0884258906950045B58B /* LocalDataService.swift */,
+				70DD2DC9258F92C7003BEAAA /* RegularExpressionService.swift */,
+				70DD2DCC258F94B1003BEAAA /* EncodingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,8 +239,19 @@
 			isa = PBXGroup;
 			children = (
 				70BC089F25890D680045B58B /* AuthController.swift */,
+				70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */,
+				70DD2DC5258F8ED3003BEAAA /* SignUpUsernameController.swift */,
+				70DD2DCF258F9B7F003BEAAA /* SignUpPasswordController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		70DD2DC0258F8C42003BEAAA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				70DD2DC1258F8C72003BEAAA /* ApiEndpoint.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		88B3E0B8CA612E434840B8FE /* Frameworks */ = {
@@ -340,20 +378,30 @@
 			files = (
 				7018FFD92589014100FE5078 /* PuppyViewController.swift in Sources */,
 				70006D252588FF9C00E507DB /* ViewController.swift in Sources */,
+				70DD2DD6258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift in Sources */,
 				70BC087E258905C80045B58B /* ViewControllerExtension.swift in Sources */,
 				70BC0889258907260045B58B /* AuthKeys.swift in Sources */,
 				70BC0885258906950045B58B /* LocalDataService.swift in Sources */,
+				70DD2DBE258F8A46003BEAAA /* LoadingView.swift in Sources */,
 				70BC089A25890C840045B58B /* ScreenSize.swift in Sources */,
+				70DD2DC2258F8C72003BEAAA /* ApiEndpoint.swift in Sources */,
 				70006D212588FF9C00E507DB /* AppDelegate.swift in Sources */,
 				7018FFE32589017100FE5078 /* MyViewController.swift in Sources */,
 				70006D232588FF9C00E507DB /* SceneDelegate.swift in Sources */,
 				70BC0895258909B00045B58B /* ClickableCardViewTypeOne.swift in Sources */,
+				70DD2DD3258FA699003BEAAA /* TextFieldViewForPassword.swift in Sources */,
+				70DD2DCA258F92C7003BEAAA /* RegularExpressionService.swift in Sources */,
 				70BC088D258907B80045B58B /* UnLoggedInView.swift in Sources */,
+				70DD2DCD258F94B1003BEAAA /* EncodingService.swift in Sources */,
 				70BC0892258908490045B58B /* LoggedInView.swift in Sources */,
+				70DD2DD0258F9B7F003BEAAA /* SignUpPasswordController.swift in Sources */,
 				70BC0879258904D00045B58B /* TitleLabel.swift in Sources */,
 				70BC08A025890D680045B58B /* AuthController.swift in Sources */,
 				70BC08822589066C0045B58B /* AuthService.swift in Sources */,
+				70DD2DC6258F8ED3003BEAAA /* SignUpUsernameController.swift in Sources */,
 				70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */,
+				70DD2DBB258F8250003BEAAA /* SignUpAuthNumberController.swift in Sources */,
+				70DD2DB8258F70F6003BEAAA /* SmallDescriptionLabel.swift in Sources */,
 				7018FFDE2589015900FE5078 /* PetViewController.swift in Sources */,
 				7018FFD52589002600FE5078 /* RootController.swift in Sources */,
 			);
