@@ -17,6 +17,10 @@ class LocalDataService {
         defaults.set(value, forKey: key)
     }
     
+    func removeData(key:String) {
+        defaults.removeObject(forKey: key)
+    }
+    
     func getData(key:String) -> String? {
         if let value = defaults.string(forKey: key) {
             return value

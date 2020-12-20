@@ -12,6 +12,7 @@ class SignUpAuthNumberController: UIViewController {
     // MARK: Properties
     let username:String
     let password:String
+    var phoneNumber:String?
     
     
     private lazy var phoneVerificationTextFieldView:TextFieldViewTypeOne = {
@@ -42,15 +43,18 @@ class SignUpAuthNumberController: UIViewController {
         return view
     }()
     
-//    private lazy var codeTextView:UITextField = {
-//        let tf = UITextField()
-//        tf.textContentType = .oneTimeCode
-//        return tf
-//    }()
     
     private lazy var checkButton:UIButton = {
         let bt = UIButton(type: UIButton.ButtonType.system)
         bt.setTitle("확인", for: UIControl.State.normal)
+        bt.addTarget(self, action: #selector(checkButtonTapped), for: UIControl.Event.touchUpInside)
+        return bt
+    }()
+    
+    private lazy var resendButton:UIButton = {
+        let bt = UIButton(type: UIButton.ButtonType.system)
+        bt.setTitle("재전송", for: UIControl.State.normal)
+        bt.addTarget(self, action: #selector(resendButtonTapped), for: UIControl.Event.touchUpInside)
         return bt
     }()
     
@@ -122,6 +126,14 @@ class SignUpAuthNumberController: UIViewController {
         checkButton.topAnchor.constraint(equalTo: phoneVerificationTextFieldView.bottomAnchor, constant: 20).isActive = true
         checkButton.isHidden = true
         
+        view.addSubview(resendButton)
+        resendButton.translatesAutoresizingMaskIntoConstraints = false
+        resendButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        resendButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        resendButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        resendButton.topAnchor.constraint(equalTo: checkButton.bottomAnchor, constant: 20).isActive = true
+        resendButton.isHidden = true
+        
         
         view.addSubview(loadingView)
         loadingView.translatesAutoresizingMaskIntoConstraints = false
@@ -132,9 +144,47 @@ class SignUpAuthNumberController: UIViewController {
         loadingView.isHidden = true
     }
     
-    
+    // MARK: Helpers
+    func makeNewAccount(smsAuthNumber:Int, userLoginPassword:String, userNickName:String, userPhoneNumber:String) {
+        loadingView.isHidden = false
+        AuthService.shared.signUp(smsAuthNumber: smsAuthNumber, userLoginPassword: userLoginPassword, userNickName: userNickName, userPhoneNumber: userPhoneNumber) { (error, errorString, success, jwt) in
+            self.loadingView.isHidden = true
+            self.handleError(error: error, errorMessage: errorString, success: success)
+            guard let jwt = jwt else { return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 네트워크 상태가 좋지 않습니다. 나중에 다시 시도해주세요 ㅠ_ㅠ", handler: nil)}
+            // 이제 이 jwt 가지고 로그인시켜주고 쌩쑈를 하면 된당
+            let rootController = RootControllerService.shared.getRootController()
+            rootController.loginUser(jwt: jwt)
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     // MARK: Selectors
+    @objc func resendButtonTapped() {
+        self.phoneVerificationTextFieldView.isHidden = false
+        self.requestButton.isHidden = false
+        self.codeTextView.isHidden = true
+        self.checkButton.isHidden = true
+        self.resendButton.isHidden = true
+        
+        self.phoneVerificationTextFieldView.textField.text = ""
+        dismissKeyboard()
+    }
+    
+    @objc func checkButtonTapped() {
+        guard let authSmsCodeString = codeTextView.textField.text else { return }
+        guard let phoneNumber = self.phoneNumber else { return }
+        guard let authSms = Int(authSmsCodeString) else { return }
+        loadingView.isHidden = false
+        dismissKeyboard()
+        AuthService.shared.validateAuthNumber(authSms: authSms, callNumber: phoneNumber, userName: self.username) { (error, errorMessage, success) in
+            self.loadingView.isHidden = true
+            self.handleError(error: error, errorMessage: errorMessage, success: success)
+            
+            self.loadingView.isHidden = false
+            self.makeNewAccount(smsAuthNumber: authSms, userLoginPassword: self.password, userNickName: self.username, userPhoneNumber: phoneNumber)
+        }
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         
         if textField == phoneVerificationTextFieldView.textField {
@@ -172,6 +222,8 @@ class SignUpAuthNumberController: UIViewController {
         let formattedPhoneString = phoneString.replacingOccurrences(of: " - ", with: "")
         if formattedPhoneString.count < 11 { return }
         
+        self.phoneNumber = formattedPhoneString
+        
         dismissKeyboard()
         loadingView.isHidden = false
         
@@ -184,7 +236,7 @@ class SignUpAuthNumberController: UIViewController {
             self.requestButton.isHidden = true
             self.codeTextView.isHidden = false
             self.checkButton.isHidden = false 
-            
+            self.resendButton.isHidden = false
         }
 
     }

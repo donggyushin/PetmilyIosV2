@@ -28,6 +28,8 @@
 		70BC089A25890C840045B58B /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC089925890C840045B58B /* ScreenSize.swift */; };
 		70BC08A025890D680045B58B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC089F25890D680045B58B /* AuthController.swift */; };
 		70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */; };
+		70C70443258FF9AE006FCEF7 /* RootControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C70442258FF9AE006FCEF7 /* RootControllerService.swift */; };
+		70C704462590039D006FCEF7 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C704452590039D006FCEF7 /* ForgotPasswordController.swift */; };
 		70DD2DB8258F70F6003BEAAA /* SmallDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */; };
 		70DD2DBB258F8250003BEAAA /* SignUpAuthNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */; };
 		70DD2DBE258F8A46003BEAAA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DBD258F8A46003BEAAA /* LoadingView.swift */; };
@@ -66,6 +68,8 @@
 		70BC089925890C840045B58B /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		70BC089F25890D680045B58B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewTypeOne.swift; sourceTree = "<group>"; };
+		70C70442258FF9AE006FCEF7 /* RootControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerService.swift; sourceTree = "<group>"; };
+		70C704452590039D006FCEF7 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDescriptionLabel.swift; sourceTree = "<group>"; };
 		70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthNumberController.swift; sourceTree = "<group>"; };
 		70DD2DBD258F8A46003BEAAA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				70BC0884258906950045B58B /* LocalDataService.swift */,
 				70DD2DC9258F92C7003BEAAA /* RegularExpressionService.swift */,
 				70DD2DCC258F94B1003BEAAA /* EncodingService.swift */,
+				70C70442258FF9AE006FCEF7 /* RootControllerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */,
 				70DD2DC5258F8ED3003BEAAA /* SignUpUsernameController.swift */,
 				70DD2DCF258F9B7F003BEAAA /* SignUpPasswordController.swift */,
+				70C704452590039D006FCEF7 /* ForgotPasswordController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				70BC0885258906950045B58B /* LocalDataService.swift in Sources */,
 				70DD2DBE258F8A46003BEAAA /* LoadingView.swift in Sources */,
 				70BC089A25890C840045B58B /* ScreenSize.swift in Sources */,
+				70C70443258FF9AE006FCEF7 /* RootControllerService.swift in Sources */,
 				70DD2DC2258F8C72003BEAAA /* ApiEndpoint.swift in Sources */,
 				70006D212588FF9C00E507DB /* AppDelegate.swift in Sources */,
 				7018FFE32589017100FE5078 /* MyViewController.swift in Sources */,
@@ -400,6 +407,7 @@
 				70BC08822589066C0045B58B /* AuthService.swift in Sources */,
 				70DD2DC6258F8ED3003BEAAA /* SignUpUsernameController.swift in Sources */,
 				70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */,
+				70C704462590039D006FCEF7 /* ForgotPasswordController.swift in Sources */,
 				70DD2DBB258F8250003BEAAA /* SignUpAuthNumberController.swift in Sources */,
 				70DD2DB8258F70F6003BEAAA /* SmallDescriptionLabel.swift in Sources */,
 				7018FFDE2589015900FE5078 /* PetViewController.swift in Sources */,

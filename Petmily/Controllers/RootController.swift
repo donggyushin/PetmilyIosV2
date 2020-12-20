@@ -18,6 +18,17 @@ class RootController: UITabBarController {
     }
     
     // MARK: Configures
+    func loginUser(jwt:String) {
+        LocalDataService.shared.setData(value: jwt, key: AuthKeys.shared.AUTH)
+        configureViewControllers()
+    }
+    
+    func logoutUser() {
+        LocalDataService.shared.removeData(key: AuthKeys.shared.AUTH)
+        configureViewControllers()
+    }
+    
+    
     func configureViewControllers() {
         view.backgroundColor = .systemBackground
         viewControllers = []

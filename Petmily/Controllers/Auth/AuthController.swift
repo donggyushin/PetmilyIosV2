@@ -26,12 +26,13 @@ class AuthController: UIViewController {
     private lazy var idTextView:TextFieldViewTypeOne = {
         let tv = TextFieldViewTypeOne()
         tv.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        tv.textField.placeholder = "아이디를 입력해주세요"
+        tv.textField.placeholder = "핸드폰번호를 입력해주세요"
+        tv.textField.keyboardType = .numberPad
         return tv
     }()
     
-    private lazy var passwordTextView:TextFieldViewTypeOne = {
-        let tv = TextFieldViewTypeOne()
+    private lazy var passwordTextView:TextFieldViewForPassword = {
+        let tv = TextFieldViewForPassword()
         tv.heightAnchor.constraint(equalToConstant: 50).isActive = true
         tv.textField.placeholder = "비밀번호를 입력해주세요"
         tv.textField.isSecureTextEntry = true
@@ -48,6 +49,7 @@ class AuthController: UIViewController {
     private lazy var loginButton:UIButton = {
         let bt = UIButton(type: UIButton.ButtonType.system)
         bt.setTitle("로그인", for: UIControl.State.normal)
+        bt.addTarget(self, action: #selector(logginButtonTapped), for: UIControl.Event.touchUpInside)
         return bt
     }()
     
@@ -66,6 +68,29 @@ class AuthController: UIViewController {
         
         bt.addTarget(self, action: #selector(redirectToSignUpController), for: UIControl.Event.touchUpInside)
         return bt
+    }()
+    
+    private lazy var forgotPasswordButton:UIButton = {
+        let bt = UIButton(type: UIButton.ButtonType.system)
+        
+
+        let firstAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 14)]
+        let secondAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
+
+        let firstString = NSMutableAttributedString(string: "비밀번호를 잊으셨나요? ", attributes: firstAttributes)
+        let secondString = NSAttributedString(string: "비밀번호 찾기", attributes: secondAttributes)
+
+        firstString.append(secondString)
+        bt.setAttributedTitle(firstString, for: UIControl.State.normal)
+        
+        bt.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: UIControl.Event.touchUpInside)
+        
+        return bt
+    }()
+    
+    private lazy var loadingView:LoadingView = {
+        let lv = LoadingView()
+        return lv
     }()
     
     // MARK: Lifecycles
@@ -109,9 +134,40 @@ class AuthController: UIViewController {
         redirectButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         redirectButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         
+        view.addSubview(forgotPasswordButton)
+        forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
+        forgotPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        forgotPasswordButton.bottomAnchor.constraint(equalTo: redirectButton.topAnchor, constant: -10).isActive = true
+        
+        view.addSubview(loadingView)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        loadingView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        loadingView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        loadingView.isHidden = true
+        
     }
     
     // MARK: Selectors
+    @objc func logginButtonTapped() {
+        guard let id = self.idTextView.textField.text else { return }
+        guard let pw = self.passwordTextView.textField.text else { return }
+        self.loadingView.isHidden = false
+        
+        AuthService.shared.signIn(id: id, userPassword: pw) { (error, errorMessage, success, jwt) in
+            self.loadingView.isHidden = true
+            self.handleError(error: error, errorMessage: errorMessage, success: success)
+            
+            guard let jwt = jwt else { return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 네트워크 상태가 좋지 않습니다. 나중에 다시 시도해주세요 ㅠ_ㅠ", handler: nil)}
+            // 이제 이 jwt 가지고 로그인시켜주고 쌩쑈를 하면 된당
+            let rootController = RootControllerService.shared.getRootController()
+            rootController.loginUser(jwt: jwt)
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+    }
+    
     @objc func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -119,6 +175,11 @@ class AuthController: UIViewController {
     @objc func redirectToSignUpController() {
         let usernameController = SignUpUsernameController()
         navigationController?.pushViewController(usernameController, animated: true)
+    }
+    
+    @objc func forgotPasswordButtonTapped() {
+        let forgotPasswordController = ForgotPasswordController()
+        navigationController?.pushViewController(forgotPasswordController, animated: true)
     }
 
 }

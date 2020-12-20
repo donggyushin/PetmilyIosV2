@@ -16,6 +16,13 @@ class MyViewController: UIViewController {
         return label
     }()
     
+    private lazy var logoutButton:UIButton = {
+        let bt = UIButton(type: UIButton.ButtonType.system)
+        bt.setTitle("로그아웃", for: UIControl.State.normal)
+        bt.addTarget(self, action: #selector(logoutButtonTapped), for: UIControl.Event.touchUpInside)
+        return bt
+    }()
+    
     private lazy var unloggedInView:UnLoggedInView = {
         let view = UnLoggedInView()
         view.delegate = self
@@ -38,6 +45,11 @@ class MyViewController: UIViewController {
     // MARK: Configures
     func configureUI() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
+        
+        if AuthService.shared.isLoggedIn() {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: logoutButton)
+        }
+        
         clearNavigationBar()
         view.backgroundColor = .systemBackground
         
@@ -56,6 +68,12 @@ class MyViewController: UIViewController {
             unloggedInView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
             unloggedInView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         }
+    }
+    
+    // MARK: Selectors
+    @objc func logoutButtonTapped() {
+        let rootController = RootControllerService.shared.getRootController()
+        rootController.logoutUser()
     }
     
 

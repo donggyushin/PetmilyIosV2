@@ -47,19 +47,16 @@ class TouchableImageViewForLongTouch: UIView {
     // MARK: Overrides
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         layer.opacity = 0.6
-        print("touchesBegan")
         self.delegate?.touchesBegan(sender: self)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         layer.opacity = 1
-        print("touchesCancelled")
         self.delegate?.touchesEnd(sender: self)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         layer.opacity = 1
-        print("touchesEnded")
         self.delegate?.touchesEnd(sender: self)
     }
 
