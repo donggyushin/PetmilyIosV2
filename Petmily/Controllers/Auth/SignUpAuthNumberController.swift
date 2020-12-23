@@ -149,7 +149,10 @@ class SignUpAuthNumberController: UIViewController {
         loadingView.isHidden = false
         AuthService.shared.signUp(smsAuthNumber: smsAuthNumber, userLoginPassword: userLoginPassword, userNickName: userNickName, userPhoneNumber: userPhoneNumber) { (error, errorString, success, jwt) in
             self.loadingView.isHidden = true
-            self.handleError(error: error, errorMessage: errorString, success: success)
+            let go = self.handleError(error: error, errorMessage: errorString, success: success)
+            
+            if go == false { return }
+            
             guard let jwt = jwt else { return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 네트워크 상태가 좋지 않습니다. 나중에 다시 시도해주세요 ㅠ_ㅠ", handler: nil)}
             // 이제 이 jwt 가지고 로그인시켜주고 쌩쑈를 하면 된당
             let rootController = RootControllerService.shared.getRootController()
@@ -178,8 +181,8 @@ class SignUpAuthNumberController: UIViewController {
         dismissKeyboard()
         AuthService.shared.validateAuthNumber(authSms: authSms, callNumber: phoneNumber, userName: self.username) { (error, errorMessage, success) in
             self.loadingView.isHidden = true
-            self.handleError(error: error, errorMessage: errorMessage, success: success)
-            
+            let go = self.handleError(error: error, errorMessage: errorMessage, success: success)
+            if go == false { return }
             self.loadingView.isHidden = false
             self.makeNewAccount(smsAuthNumber: authSms, userLoginPassword: self.password, userNickName: self.username, userPhoneNumber: phoneNumber)
         }
@@ -192,7 +195,7 @@ class SignUpAuthNumberController: UIViewController {
             
             if let lastText = text.last {
                 if (lastText == " ") {
-                    textField.text = String(textField.text!.dropLast(3))
+                    textField.text = ""
                     return
                 }
             }
@@ -229,14 +232,16 @@ class SignUpAuthNumberController: UIViewController {
         
         AuthService.shared.requestAuthNumber(callNumber: formattedPhoneString, userName: self.username) { (error, errorMessage, success) in
             self.loadingView.isHidden = true
-            self.handleError(error: error, errorMessage: errorMessage, success: success)
+            let go = self.handleError(error: error, errorMessage: errorMessage, success: success)
             
-            print("핸드폰 인증 요청!!")
-            self.phoneVerificationTextFieldView.isHidden = true
-            self.requestButton.isHidden = true
-            self.codeTextView.isHidden = false
-            self.checkButton.isHidden = false 
-            self.resendButton.isHidden = false
+            if go {
+                self.phoneVerificationTextFieldView.isHidden = true
+                self.requestButton.isHidden = true
+                self.codeTextView.isHidden = false
+                self.checkButton.isHidden = false
+                self.resendButton.isHidden = false
+            }
+            
         }
 
     }

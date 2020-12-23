@@ -142,14 +142,17 @@ class AuthService {
             case .success(let value):
                 guard let value = value as? [String:Any] else { return completion(nil, "제대로 된 value를 받아오고 있지 못하고 있습니다.", false)}
                 guard let statusCode = response.response?.statusCode else { return completion(nil, "현재 서버 네트워크의 상태가 불안전합니다. 잠시 후에 다시 시도해주세요 ㅠ_ㅠ", false)}
+                print("value:\(value)")
                 switch statusCode {
                 case 200:
                     return completion(nil, nil, true)
                 case 409:
                     guard let message = value["message"] as? String else { return completion(nil, "제대로 된 value를 받아오고 있지 못하고 있습니다.", false) }
                     return completion(nil, message, false)
+                    
                 default:
-                    return completion(nil, "현재 서버 네트워크의 상태가 불안전합니다. 잠시 후에 다시 시도해주세요 ㅠ_ㅠ", false)
+                    guard let message = value["message"] as? String else { return completion(nil, "제대로 된 value를 받아오고 있지 못하고 있습니다.", false) }
+                    return completion(nil, message, false)
                 }
             }
         }

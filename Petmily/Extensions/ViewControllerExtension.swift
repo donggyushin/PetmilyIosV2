@@ -9,19 +9,22 @@ import UIKit
 
 extension UIViewController {
     
-    func handleError(error:Error?, errorMessage:String?, success:Bool) {
+    func handleError(error:Error?, errorMessage:String?, success:Bool) -> Bool {
         if let errorMessage = errorMessage {
-            return self.presentAlertWithOnlyOkayButton(title: nil, message: errorMessage, handler: nil)
+            self.presentAlertWithOnlyOkayButton(title: nil, message: errorMessage, handler: nil)
+            return false
         }
         if let error = error {
             print("error.localizedDescription:\(error.localizedDescription)")
-            return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 서버 네트워크 통신 상황이 좋지 않습니다. 빠른 시일내로 수리하도록 하겠습니다. 죄송합니다 ㅠ_ㅠ", handler: nil)
-            
+            self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 서버 네트워크 통신 상황이 좋지 않습니다. 빠른 시일내로 수리하도록 하겠습니다. 죄송합니다 ㅠ_ㅠ", handler: nil)
+            return false
         }
         
         if !success {
-            return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 서버 네트워크 상태가 좋지 않습니다. 잠시후에 다시 시도해주세요 ㅠ_ㅠ", handler: nil)
+            self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 서버 네트워크 상태가 좋지 않습니다. 잠시후에 다시 시도해주세요 ㅠ_ㅠ", handler: nil)
+            return false
         }
+        return true 
     }
     
     func presentAlertWithOnlyOkayButton(title:String?, message:String, handler:((UIAlertAction) -> Void)?) {
