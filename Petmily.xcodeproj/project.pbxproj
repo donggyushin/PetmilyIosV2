@@ -17,6 +17,10 @@
 		7018FFD92589014100FE5078 /* PuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFD82589014100FE5078 /* PuppyViewController.swift */; };
 		7018FFDE2589015900FE5078 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFDD2589015900FE5078 /* PetViewController.swift */; };
 		7018FFE32589017100FE5078 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFE22589017100FE5078 /* MyViewController.swift */; };
+		7084F5D42595139800B1A934 /* ForgotPasswordSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084F5D32595139800B1A934 /* ForgotPasswordSecondController.swift */; };
+		7084F5D72595181600B1A934 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084F5D62595181600B1A934 /* UserService.swift */; };
+		7084F5DE25951F5700B1A934 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084F5DD25951F5700B1A934 /* BlueButton.swift */; };
+		7084F5E22595220C00B1A934 /* PuppyPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084F5E12595220C00B1A934 /* PuppyPostController.swift */; };
 		70BC0879258904D00045B58B /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC0878258904D00045B58B /* TitleLabel.swift */; };
 		70BC087E258905C80045B58B /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC087D258905C80045B58B /* ViewControllerExtension.swift */; };
 		70BC08822589066C0045B58B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08812589066C0045B58B /* AuthService.swift */; };
@@ -57,6 +61,10 @@
 		7018FFD82589014100FE5078 /* PuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyViewController.swift; sourceTree = "<group>"; };
 		7018FFDD2589015900FE5078 /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
 		7018FFE22589017100FE5078 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		7084F5D32595139800B1A934 /* ForgotPasswordSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSecondController.swift; sourceTree = "<group>"; };
+		7084F5D62595181600B1A934 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		7084F5DD25951F5700B1A934 /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
+		7084F5E12595220C00B1A934 /* PuppyPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyPostController.swift; sourceTree = "<group>"; };
 		70BC0878258904D00045B58B /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		70BC087D258905C80045B58B /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		70BC08812589066C0045B58B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				7018FFD82589014100FE5078 /* PuppyViewController.swift */,
+				7084F5E12595220C00B1A934 /* PuppyPostController.swift */,
 			);
 			path = Puppy;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 				70DD2DBD258F8A46003BEAAA /* LoadingView.swift */,
 				70DD2DD2258FA699003BEAAA /* TextFieldViewForPassword.swift */,
 				70DD2DD5258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift */,
+				7084F5DD25951F5700B1A934 /* BlueButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +221,7 @@
 				70DD2DC9258F92C7003BEAAA /* RegularExpressionService.swift */,
 				70DD2DCC258F94B1003BEAAA /* EncodingService.swift */,
 				70C70442258FF9AE006FCEF7 /* RootControllerService.swift */,
+				7084F5D62595181600B1A934 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -248,6 +259,7 @@
 				70DD2DC5258F8ED3003BEAAA /* SignUpUsernameController.swift */,
 				70DD2DCF258F9B7F003BEAAA /* SignUpPasswordController.swift */,
 				70C704452590039D006FCEF7 /* ForgotPasswordController.swift */,
+				7084F5D32595139800B1A934 /* ForgotPasswordSecondController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -393,6 +405,8 @@
 				70C70443258FF9AE006FCEF7 /* RootControllerService.swift in Sources */,
 				70DD2DC2258F8C72003BEAAA /* ApiEndpoint.swift in Sources */,
 				70006D212588FF9C00E507DB /* AppDelegate.swift in Sources */,
+				7084F5DE25951F5700B1A934 /* BlueButton.swift in Sources */,
+				7084F5D42595139800B1A934 /* ForgotPasswordSecondController.swift in Sources */,
 				7018FFE32589017100FE5078 /* MyViewController.swift in Sources */,
 				70006D232588FF9C00E507DB /* SceneDelegate.swift in Sources */,
 				70BC0895258909B00045B58B /* ClickableCardViewTypeOne.swift in Sources */,
@@ -409,6 +423,8 @@
 				70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */,
 				70C704462590039D006FCEF7 /* ForgotPasswordController.swift in Sources */,
 				70DD2DBB258F8250003BEAAA /* SignUpAuthNumberController.swift in Sources */,
+				7084F5D72595181600B1A934 /* UserService.swift in Sources */,
+				7084F5E22595220C00B1A934 /* PuppyPostController.swift in Sources */,
 				70DD2DB8258F70F6003BEAAA /* SmallDescriptionLabel.swift in Sources */,
 				7018FFDE2589015900FE5078 /* PetViewController.swift in Sources */,
 				7018FFD52589002600FE5078 /* RootController.swift in Sources */,

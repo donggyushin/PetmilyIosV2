@@ -10,6 +10,9 @@ import UIKit
 class ForgotPasswordController: UIViewController {
 
     // MARK: Properties
+    var phoneNumber:String?
+    
+    
     private lazy var titleLabel:TitleLabel = {
         let label = TitleLabel()
         label.text = "비밀번호 찾기"
@@ -49,12 +52,14 @@ class ForgotPasswordController: UIViewController {
     private lazy var checkButton:UIButton = {
         let bt = UIButton(type: UIButton.ButtonType.system)
         bt.setTitle("확인", for: UIControl.State.normal)
+        bt.addTarget(self, action: #selector(checkButtonTapped), for: UIControl.Event.touchUpInside)
         return bt
     }()
     
     private lazy var resendButton:UIButton = {
         let bt = UIButton(type: UIButton.ButtonType.system)
         bt.setTitle("재전송", for: UIControl.State.normal)
+        bt.addTarget(self, action: #selector(resendButtonTapped), for: UIControl.Event.touchUpInside)
         return bt
     }()
     
@@ -84,6 +89,8 @@ class ForgotPasswordController: UIViewController {
     func configureUI() {
         view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleLabel)
+        
+        navigationItem.backButtonTitle = "인증"
         
         view.addSubview(phoneTextField)
         phoneTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -142,14 +149,44 @@ class ForgotPasswordController: UIViewController {
     
     
     // MARK: Selectors
+    @objc func checkButtonTapped() {
+        guard let smsAuthCode = self.codeTextView.textField.text else { return }
+        guard let phoneNumber = self.phoneNumber else { return }
+        let forgotPasswordSecondController = ForgotPasswordSecondController(smsAuthCode: smsAuthCode, phoneNumber: phoneNumber)
+        navigationController?.pushViewController(forgotPasswordSecondController, animated: true)
+    }
+    
+    @objc func resendButtonTapped() {
+        self.phoneTextField.isHidden = false
+        self.requestButton.isHidden = false
+        
+        self.codeTextView.isHidden = true
+        self.checkButton.isHidden = true
+        self.resendButton.isHidden = true
+    }
     
     @objc func requestButtonTapped() {
         
         guard let phoneString = self.phoneTextField.textField.text else { return }
         let formattedPhoneString = phoneString.replacingOccurrences(of: " - ", with: "")
         if formattedPhoneString.count < 11 { return }
+        self.phoneNumber = formattedPhoneString
         
         self.loadingView.isHidden = false
+        AuthService.shared.requestAuthNumberWhenForgotPassword(callNumber: formattedPhoneString) { (error, errorMessage, success) in
+            self.loadingView.isHidden = true
+            let result = self.handleError(error: error, errorMessage: errorMessage, success: success)
+            if result == false { return }
+            
+            self.phoneTextField.isHidden = true
+            self.requestButton.isHidden = true
+            
+            self.codeTextView.isHidden = false
+            self.checkButton.isHidden = false
+            self.resendButton.isHidden = false
+            
+            
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

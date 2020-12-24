@@ -9,6 +9,7 @@ import UIKit
 
 extension UIViewController {
     
+    
     func handleError(error:Error?, errorMessage:String?, success:Bool) -> Bool {
         if let errorMessage = errorMessage {
             self.presentAlertWithOnlyOkayButton(title: nil, message: errorMessage, handler: nil)
@@ -83,5 +84,35 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    
+    
+    @objc func pullDownModalHandler(sender: UIPanGestureRecognizer) {
+        let translationY = sender.translation(in: sender.view!).y
+        
+
+        switch sender.state {
+        case .began:
+            break
+        case .changed:
+            view.transform = CGAffineTransform(translationX: 0, y: translationY)
+            
+            
+        case .ended, .cancelled:
+            if translationY > 160 {
+                dismiss(animated: true, completion: nil)
+            } else {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.view.transform = CGAffineTransform(translationX: 0, y: 0)
+                    
+                })
+                
+            }
+        case .failed, .possible:
+            break
+        @unknown default:
+            break
+        }
     }
 }

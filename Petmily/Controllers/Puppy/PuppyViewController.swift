@@ -16,6 +16,14 @@ class PuppyViewController: UIViewController {
         return label
     }()
     
+    private lazy var plusButton:BlueButton = {
+        let plusButton = BlueButton()
+        plusButton.delegate = self
+        return plusButton
+    }()
+    
+    
+    
     
     // MARK: Lifecycles
     override func viewDidLoad() {
@@ -30,6 +38,33 @@ class PuppyViewController: UIViewController {
         clearNavigationBar()
         
         view.backgroundColor = .systemBackground
+        
+        view.addSubview(plusButton)
+        plusButton.translatesAutoresizingMaskIntoConstraints = false
+        plusButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        plusButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        plusButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        plusButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        plusButton.layer.cornerRadius = 25
+        
+        
     }
+    
+    
 
+}
+
+
+extension PuppyViewController:BlueButtonProtocol {
+    func blueButtonTapped(sender: BlueButton) {
+        
+        
+        let puppyPostController = PuppyPostController()
+        
+        puppyPostController.modalPresentationStyle = .fullScreen
+        
+        present(puppyPostController, animated: true, completion: nil)
+        
+//        navigationController?.pushViewController(puppyPostController, animated: true)
+    }
 }

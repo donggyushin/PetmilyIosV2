@@ -128,6 +128,31 @@ class AuthService {
         }
     }
     
+    func requestAuthNumberWhenForgotPassword(callNumber:String, completion:@escaping(Error?, String?, Bool) -> Void) {
+        let urlString = EncodingService.shared.encodeString(urlString: "\(ApiEndpoint.shared.PetMilyBaseUrl)/api/v1/user/sendSmsForFindPassword")
+        guard let url = URL(string: urlString) else { return completion(nil, "url 객체 만들기 실패", false)}
+        let parameters = [
+            "callNumber":callNumber
+        ]
+        AF.request(url, method: HTTPMethod.post, parameters: parameters, encoding: JSONEncoding.default, headers: nil, interceptor: nil, requestModifier: nil).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                return completion(error, nil, false)
+            case .success(let value):
+                guard let value = value as? [String:Any] else { return }
+                guard let statusCode = response.response?.statusCode else { return }
+                
+                switch statusCode {
+                case 200:
+                    return completion(nil, nil, true)
+                default:
+                    let message = value["message"] as? String ?? "알 수 없는 에러발생"
+                    return completion(nil, message, false)
+                }
+            }
+        }
+    }
+    
     func requestAuthNumber(callNumber:String, userName:String, completion:@escaping(Error?, String?, Bool) -> Void) {
         let urlString = EncodingService.shared.encodeString(urlString: "\(ApiEndpoint.shared.PetMilyBaseUrl)/api/v1/user/sendAuthNumber")
         guard let url = URL(string: urlString) else { return completion(nil, "url 객체 만들기 실패", false)}
