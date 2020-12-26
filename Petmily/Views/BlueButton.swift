@@ -18,7 +18,8 @@ class BlueButton: UIView {
     
     lazy var label:UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textColor = .white
         label.text = "+"
         return label
     }()
@@ -41,7 +42,6 @@ class BlueButton: UIView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         layer.opacity = 1
-        self.delegate?.blueButtonTapped(sender: self)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -56,6 +56,14 @@ class BlueButton: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        addGestureRecognizer(tap)
+    }
+    
+    // MARK: Selectors
+    @objc func tapped() {
+        self.delegate?.blueButtonTapped(sender: self)
     }
 
 }

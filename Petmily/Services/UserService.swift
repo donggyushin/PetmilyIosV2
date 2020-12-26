@@ -18,10 +18,13 @@ class UserService {
         let headers = HTTPHeaders.init(["JWT" : "\(token)"])
         
         AF.request(url, method: HTTPMethod.get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil, requestModifier: nil).responseJSON { (response) in
-            
             switch response.result {
-            case .failure( _):
-                return
+            case .failure(_):
+                guard let statusCode = response.response?.statusCode else { return }
+                if statusCode == 401 {
+                    guard let refreshJwt = LocalDataService.shared.getData(key: AuthKeys.shared.REFRESH_TOKEN) else { return }
+                    return completion(nil, nil, false, refreshJwt, nil)
+                }
             case .success(let value):
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let value = value as? [String:Any] else { return }

@@ -41,6 +41,9 @@ class AddButtonCell: UICollectionViewCell {
         plusLabel.translatesAutoresizingMaskIntoConstraints = false
         plusLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         plusLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        addGestureRecognizer(tap)
     }
     
     // MARK: Overrides
@@ -54,6 +57,12 @@ class AddButtonCell: UICollectionViewCell {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         layer.opacity = 1
+        
+    }
+    
+    // MARK: Selectors
+    
+    @objc func tapped() {
         self.delegate?.addButtonCellTapped(sender: self)
     }
 }

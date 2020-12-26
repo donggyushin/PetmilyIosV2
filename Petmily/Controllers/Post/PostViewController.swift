@@ -11,6 +11,12 @@ import YPImagePicker
 class PostViewController: UIViewController {
     
     // MARK: Properties
+    var petKind:String?
+    var year:String?
+    var month:String?
+    var day:String?
+    
+    
     private lazy var titleLabel:TitleLabel = {
         let label = TitleLabel()
         label.text = "분양하기"
@@ -35,6 +41,41 @@ class PostViewController: UIViewController {
         return view
     }()
     
+    private lazy var petKindSelectView:PetKindSelectView = {
+        let view = PetKindSelectView()
+        view.delegate = self
+        view.type = "품종"
+        view.petKindLabel.text = "품종: "
+        return view
+    }()
+    
+    private lazy var datePickerView:PetKindSelectView = {
+        let view = PetKindSelectView()
+        view.type = "생일"
+        view.petKindLabel.text = "생일: "
+        view.delegate = self
+        return view
+    }()
+    
+    private lazy var selectButtonGroupView:SelectButtonGroupView = {
+        let view = SelectButtonGroupView()
+        let width = ScreenSize.shared.width / 2 - 20
+        view.buttonOne.widthAnchor.constraint(equalToConstant: width).isActive = true
+        view.line.widthAnchor.constraint(equalToConstant: width).isActive = true
+        view.buttonOne.setTitle("MALE", for: UIControl.State.normal)
+        view.buttonTwo.setTitle("FEMALE", for: UIControl.State.normal)
+        view.valueOne = "MALE"
+        view.valueTwo = "FEMALE"
+        view.selectedValue = "MALE"
+        return view
+    }()
+    
+    private lazy var nextButton:BlueButton = {
+        let bt = BlueButton()
+        bt.label.text = "다음"
+        return bt
+    }()
+    
     // MARK: Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +85,8 @@ class PostViewController: UIViewController {
     
     // MARK: Configures
     func configureUI() {
+        
+        navigationItem.backButtonTitle = "분양하기"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: closeButton)
@@ -65,6 +108,36 @@ class PostViewController: UIViewController {
         selectImageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         selectImageView.heightAnchor.constraint(equalToConstant: ScreenSize.shared.width).isActive = true
         
+        scrollView.addSubview(petKindSelectView)
+        petKindSelectView.translatesAutoresizingMaskIntoConstraints = false
+        petKindSelectView.topAnchor.constraint(equalTo: selectImageView.bottomAnchor).isActive = true
+        petKindSelectView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        petKindSelectView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        petKindSelectView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        scrollView.addSubview(datePickerView)
+        datePickerView.translatesAutoresizingMaskIntoConstraints = false
+        datePickerView.topAnchor.constraint(equalTo: petKindSelectView.bottomAnchor).isActive = true
+        datePickerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        datePickerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        datePickerView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        scrollView.addSubview(selectButtonGroupView)
+        selectButtonGroupView.translatesAutoresizingMaskIntoConstraints = false
+        selectButtonGroupView.topAnchor.constraint(equalTo: datePickerView.bottomAnchor).isActive = true
+        selectButtonGroupView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        selectButtonGroupView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        selectButtonGroupView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        selectButtonGroupView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -100).isActive = true
+        
+        view.addSubview(nextButton)
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        nextButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        nextButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        nextButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        nextButton.isHidden = true 
     }
     
     // MARK: Selectors
@@ -82,5 +155,36 @@ extension PostViewController:SelectImageViewProtocol {
     func selectImageViewPresentPicker(picker: YPImagePicker) {
         
         self.present(picker, animated: true, completion: nil)
+    }
+}
+
+
+extension PostViewController:PetKindSelectViewProtocol {
+    func petKindSelectViewTapped(type:String) {
+        switch type {
+        case "품종":
+            let selectPetKindController = SelectPetKindController(collectionViewLayout: UICollectionViewFlowLayout())
+            navigationController?.pushViewController(selectPetKindController, animated: true)
+            break
+        case "생일":
+            let selectDateController = SelectDateController()
+            selectDateController.delegate = self
+            navigationController?.pushViewController(selectDateController, animated: true)
+            break
+        default:
+            break
+        }
+        
+    }
+}
+
+
+extension PostViewController:SelectDateControllerProtocol {
+    func selectDateControllerBirthDate(year: String, month: String, day: String) {
+        self.year = year
+        self.month = month
+        self.day = day
+        
+        self.datePickerView.petKindLabel.text = "생일: \(year)년 \(month)월 \(day)일"
     }
 }

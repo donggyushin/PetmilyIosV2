@@ -41,7 +41,10 @@ class ClickableCardViewTypeOne: UIView {
         addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true 
+        label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        addGestureRecognizer(tap)
     }
     
     // MARK: Overrides
@@ -55,6 +58,11 @@ class ClickableCardViewTypeOne: UIView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         layer.opacity = 1
+        
+    }
+    
+    // MARK: Selectors
+    @objc func tapped() {
         self.delegate?.clickableCardViewTypeOneTapped(sender: self)
     }
 

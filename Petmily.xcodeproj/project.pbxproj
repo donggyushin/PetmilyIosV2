@@ -41,6 +41,12 @@
 		70C70443258FF9AE006FCEF7 /* RootControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C70442258FF9AE006FCEF7 /* RootControllerService.swift */; };
 		70C704462590039D006FCEF7 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C704452590039D006FCEF7 /* ForgotPasswordController.swift */; };
 		70D2C3DE25978D68003B4634 /* PostPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C3DD25978D68003B4634 /* PostPhotoModel.swift */; };
+		70D2C3EB25979DE5003B4634 /* PetKindSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C3EA25979DE5003B4634 /* PetKindSelectView.swift */; };
+		70D2C3EE25979F88003B4634 /* SelectPetKindController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C3ED25979F88003B4634 /* SelectPetKindController.swift */; };
+		70D2C3F12597A582003B4634 /* SelectButtonGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C3F02597A582003B4634 /* SelectButtonGroupView.swift */; };
+		70D2C3F82597AFC4003B4634 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C3F72597AFC4003B4634 /* DatePickerView.swift */; };
+		70D2C3FB2597B004003B4634 /* SelectDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C3FA2597B004003B4634 /* SelectDateController.swift */; };
+		70D2C3FE2597B554003B4634 /* BirthdayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C3FD2597B554003B4634 /* BirthdayService.swift */; };
 		70DD2DB8258F70F6003BEAAA /* SmallDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */; };
 		70DD2DBB258F8250003BEAAA /* SignUpAuthNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */; };
 		70DD2DBE258F8A46003BEAAA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DBD258F8A46003BEAAA /* LoadingView.swift */; };
@@ -92,6 +98,12 @@
 		70C70442258FF9AE006FCEF7 /* RootControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerService.swift; sourceTree = "<group>"; };
 		70C704452590039D006FCEF7 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		70D2C3DD25978D68003B4634 /* PostPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoModel.swift; sourceTree = "<group>"; };
+		70D2C3EA25979DE5003B4634 /* PetKindSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetKindSelectView.swift; sourceTree = "<group>"; };
+		70D2C3ED25979F88003B4634 /* SelectPetKindController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPetKindController.swift; sourceTree = "<group>"; };
+		70D2C3F02597A582003B4634 /* SelectButtonGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButtonGroupView.swift; sourceTree = "<group>"; };
+		70D2C3F72597AFC4003B4634 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		70D2C3FA2597B004003B4634 /* SelectDateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateController.swift; sourceTree = "<group>"; };
+		70D2C3FD2597B554003B4634 /* BirthdayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayService.swift; sourceTree = "<group>"; };
 		70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDescriptionLabel.swift; sourceTree = "<group>"; };
 		70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthNumberController.swift; sourceTree = "<group>"; };
 		70DD2DBD258F8A46003BEAAA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -210,6 +222,7 @@
 				704ECFE32597809A00D90E37 /* SelectImageView.swift */,
 				704ECFE62597840A00D90E37 /* AddButtonCell.swift */,
 				704ECFE92597856F00D90E37 /* PetPhotoCell.swift */,
+				70D2C3EA25979DE5003B4634 /* PetKindSelectView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -218,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				7084F5E725952D7700B1A934 /* PostViewController.swift */,
+				70D2C3ED25979F88003B4634 /* SelectPetKindController.swift */,
+				70D2C3FA2597B004003B4634 /* SelectDateController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -245,6 +260,8 @@
 				70DD2DD5258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift */,
 				7084F5DD25951F5700B1A934 /* BlueButton.swift */,
 				704ECFDF2597753C00D90E37 /* CircleImageView.swift */,
+				70D2C3F02597A582003B4634 /* SelectButtonGroupView.swift */,
+				70D2C3F72597AFC4003B4634 /* DatePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +283,7 @@
 				70DD2DCC258F94B1003BEAAA /* EncodingService.swift */,
 				70C70442258FF9AE006FCEF7 /* RootControllerService.swift */,
 				7084F5D62595181600B1A934 /* UserService.swift */,
+				70D2C3FD2597B554003B4634 /* BirthdayService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -440,13 +458,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7018FFD92589014100FE5078 /* PuppyViewController.swift in Sources */,
+				70D2C3FE2597B554003B4634 /* BirthdayService.swift in Sources */,
 				70006D252588FF9C00E507DB /* ViewController.swift in Sources */,
 				70DD2DD6258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift in Sources */,
 				70BC087E258905C80045B58B /* ViewControllerExtension.swift in Sources */,
 				70BC0889258907260045B58B /* AuthKeys.swift in Sources */,
 				70BC0885258906950045B58B /* LocalDataService.swift in Sources */,
+				70D2C3EB25979DE5003B4634 /* PetKindSelectView.swift in Sources */,
 				704ECFE42597809A00D90E37 /* SelectImageView.swift in Sources */,
 				70DD2DBE258F8A46003BEAAA /* LoadingView.swift in Sources */,
+				70D2C3EE25979F88003B4634 /* SelectPetKindController.swift in Sources */,
 				7084F5E825952D7700B1A934 /* PostViewController.swift in Sources */,
 				708EC39D2596D323008334B9 /* UserModel.swift in Sources */,
 				70BC089A25890C840045B58B /* ScreenSize.swift in Sources */,
@@ -458,6 +479,7 @@
 				704ECFE72597840A00D90E37 /* AddButtonCell.swift in Sources */,
 				7084F5DE25951F5700B1A934 /* BlueButton.swift in Sources */,
 				7084F5D42595139800B1A934 /* ForgotPasswordSecondController.swift in Sources */,
+				70D2C3F82597AFC4003B4634 /* DatePickerView.swift in Sources */,
 				7018FFE32589017100FE5078 /* MyViewController.swift in Sources */,
 				70006D232588FF9C00E507DB /* SceneDelegate.swift in Sources */,
 				708EC3A125970B4B008334B9 /* MyUserCardView.swift in Sources */,
@@ -465,12 +487,14 @@
 				70DD2DD3258FA699003BEAAA /* TextFieldViewForPassword.swift in Sources */,
 				70DD2DCA258F92C7003BEAAA /* RegularExpressionService.swift in Sources */,
 				704ECFEA2597856F00D90E37 /* PetPhotoCell.swift in Sources */,
+				70D2C3FB2597B004003B4634 /* SelectDateController.swift in Sources */,
 				70BC088D258907B80045B58B /* UnLoggedInView.swift in Sources */,
 				70DD2DCD258F94B1003BEAAA /* EncodingService.swift in Sources */,
 				70BC0892258908490045B58B /* LoggedInView.swift in Sources */,
 				70DD2DD0258F9B7F003BEAAA /* SignUpPasswordController.swift in Sources */,
 				70BC0879258904D00045B58B /* TitleLabel.swift in Sources */,
 				70BC08A025890D680045B58B /* AuthController.swift in Sources */,
+				70D2C3F12597A582003B4634 /* SelectButtonGroupView.swift in Sources */,
 				70BC08822589066C0045B58B /* AuthService.swift in Sources */,
 				70DD2DC6258F8ED3003BEAAA /* SignUpUsernameController.swift in Sources */,
 				70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */,
