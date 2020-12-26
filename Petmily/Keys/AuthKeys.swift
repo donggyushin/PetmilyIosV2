@@ -10,4 +10,5 @@ import Foundation
 class AuthKeys {
     static let shared = AuthKeys()
     let AUTH = "AUTH"
+    let REFRESH_TOKEN = "REFRESH_TOKEN"
 }

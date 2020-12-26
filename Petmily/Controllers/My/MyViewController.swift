@@ -10,18 +10,19 @@ import UIKit
 class MyViewController: UIViewController {
     
     // MARK: Properties
+    var user:UserModel? {
+        didSet {
+            guard let user = self.user else { return }
+            self.loggedInView.user = user 
+        }
+    }
+    
     private lazy var titleLabel:TitleLabel = {
         let label = TitleLabel()
         label.text = "My"
         return label
     }()
     
-    private lazy var logoutButton:UIButton = {
-        let bt = UIButton(type: UIButton.ButtonType.system)
-        bt.setTitle("로그아웃", for: UIControl.State.normal)
-        bt.addTarget(self, action: #selector(logoutButtonTapped), for: UIControl.Event.touchUpInside)
-        return bt
-    }()
     
     private lazy var unloggedInView:UnLoggedInView = {
         let view = UnLoggedInView()
@@ -46,9 +47,7 @@ class MyViewController: UIViewController {
     func configureUI() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
         
-        if AuthService.shared.isLoggedIn() {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: logoutButton)
-        }
+        
         
         clearNavigationBar()
         view.backgroundColor = .systemBackground
@@ -70,11 +69,6 @@ class MyViewController: UIViewController {
         }
     }
     
-    // MARK: Selectors
-    @objc func logoutButtonTapped() {
-        let rootController = RootControllerService.shared.getRootController()
-        rootController.logoutUser()
-    }
     
 
 }

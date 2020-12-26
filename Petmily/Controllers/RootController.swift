@@ -9,25 +9,62 @@ import UIKit
 
 class RootController: UITabBarController, UITabBarControllerDelegate {
 
+    // MARK: Properties
+    var user:UserModel? {
+        didSet {
+            guard let user = user else { return }
+            let myController = RootControllerService.shared.getMyController()
+            myController.user = user
+        }
+    }
     
     // MARK: Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureViewControllers()
+        
+        
         self.delegate = self
         
+    }// MARK: Apis
+    func fetchUser(token:String) {
+        UserService.shared.fetchUser(token: token, completion: { (error, errorMessage, success, refreshToken, user) in
+            
+            if let refreshToken = refreshToken {
+                // TODO: 토큰 재발급
+                AuthService.shared.renewalToken(refreshToken: refreshToken) { (success, jwt) in
+                    if success {
+                        guard let jwt = jwt else { return }
+                        self.fetchUser(token: jwt)
+                    }
+                }
+                return
+            }
+            
+            if success {
+                guard let user = user else { return }
+                self.user = user
+            }else {
+                
+                return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 네트워크 상태가 불안정합니다. 이용에 불편을 드려 죄송합니다", handler: nil)
+            }
+        })
     }
     
     // MARK: Configures
-    func loginUser(jwt:String) {
+    func loginUser(jwt:String,refreshJwt:String) {
         LocalDataService.shared.setData(value: jwt, key: AuthKeys.shared.AUTH)
+        LocalDataService.shared.setData(value: refreshJwt, key: AuthKeys.shared.REFRESH_TOKEN)
         configureViewControllers()
+        
+        
     }
     
     func logoutUser() {
         LocalDataService.shared.removeData(key: AuthKeys.shared.AUTH)
         configureViewControllers()
+        selectedIndex = 3
     }
     
     
@@ -54,6 +91,12 @@ class RootController: UITabBarController, UITabBarControllerDelegate {
         myViewController.tabBarItem.tag = 3
         
         viewControllers = [puppyViewController, petViewController,postController, myViewController]
+        
+        if let token = LocalDataService.shared.getData(key: AuthKeys.shared.AUTH) {
+            fetchUser(token: token)
+        }
+        
+        
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

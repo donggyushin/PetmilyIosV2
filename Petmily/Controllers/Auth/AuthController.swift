@@ -155,14 +155,19 @@ class AuthController: UIViewController {
         guard let pw = self.passwordTextView.textField.text else { return }
         self.loadingView.isHidden = false
         
-        AuthService.shared.signIn(id: id, userPassword: pw) { (error, errorMessage, success, jwt) in
+        AuthService.shared.signIn(id: id, userPassword: pw) { (error, errorMessage, success, jwt, refreshJwt) in
             self.loadingView.isHidden = true
-            self.handleError(error: error, errorMessage: errorMessage, success: success)
+            let result = self.handleError(error: error, errorMessage: errorMessage, success: success)
+            
+            if result == false {
+                return self.presentAlertWithOnlyOkayButton(title: nil, message: "알 수 없는 에러 발생", handler: nil)
+            }
             
             guard let jwt = jwt else { return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 네트워크 상태가 좋지 않습니다. 나중에 다시 시도해주세요 ㅠ_ㅠ", handler: nil)}
+            guard let refreshJwt = refreshJwt else { return self.presentAlertWithOnlyOkayButton(title: nil, message: "알 수 없는 에러 발생", handler: nil)}
             // 이제 이 jwt 가지고 로그인시켜주고 쌩쑈를 하면 된당
             let rootController = RootControllerService.shared.getRootController()
-            rootController.loginUser(jwt: jwt)
+            rootController.loginUser(jwt: jwt, refreshJwt: refreshJwt)
             self.dismiss(animated: true, completion: nil)
             
         }

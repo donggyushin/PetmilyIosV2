@@ -17,10 +17,16 @@
 		7018FFD92589014100FE5078 /* PuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFD82589014100FE5078 /* PuppyViewController.swift */; };
 		7018FFDE2589015900FE5078 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFDD2589015900FE5078 /* PetViewController.swift */; };
 		7018FFE32589017100FE5078 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFE22589017100FE5078 /* MyViewController.swift */; };
+		704ECFE02597753C00D90E37 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ECFDF2597753C00D90E37 /* CircleImageView.swift */; };
+		704ECFE42597809A00D90E37 /* SelectImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ECFE32597809A00D90E37 /* SelectImageView.swift */; };
+		704ECFE72597840A00D90E37 /* AddButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ECFE62597840A00D90E37 /* AddButtonCell.swift */; };
+		704ECFEA2597856F00D90E37 /* PetPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ECFE92597856F00D90E37 /* PetPhotoCell.swift */; };
 		7084F5D42595139800B1A934 /* ForgotPasswordSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084F5D32595139800B1A934 /* ForgotPasswordSecondController.swift */; };
 		7084F5D72595181600B1A934 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084F5D62595181600B1A934 /* UserService.swift */; };
 		7084F5DE25951F5700B1A934 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084F5DD25951F5700B1A934 /* BlueButton.swift */; };
 		7084F5E825952D7700B1A934 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084F5E725952D7700B1A934 /* PostViewController.swift */; };
+		708EC39D2596D323008334B9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708EC39C2596D323008334B9 /* UserModel.swift */; };
+		708EC3A125970B4B008334B9 /* MyUserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708EC3A025970B4B008334B9 /* MyUserCardView.swift */; };
 		70BC0879258904D00045B58B /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC0878258904D00045B58B /* TitleLabel.swift */; };
 		70BC087E258905C80045B58B /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC087D258905C80045B58B /* ViewControllerExtension.swift */; };
 		70BC08822589066C0045B58B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08812589066C0045B58B /* AuthService.swift */; };
@@ -34,6 +40,7 @@
 		70BC08A325890EEE0045B58B /* TextFieldViewTypeOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */; };
 		70C70443258FF9AE006FCEF7 /* RootControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C70442258FF9AE006FCEF7 /* RootControllerService.swift */; };
 		70C704462590039D006FCEF7 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C704452590039D006FCEF7 /* ForgotPasswordController.swift */; };
+		70D2C3DE25978D68003B4634 /* PostPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C3DD25978D68003B4634 /* PostPhotoModel.swift */; };
 		70DD2DB8258F70F6003BEAAA /* SmallDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */; };
 		70DD2DBB258F8250003BEAAA /* SignUpAuthNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */; };
 		70DD2DBE258F8A46003BEAAA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DBD258F8A46003BEAAA /* LoadingView.swift */; };
@@ -61,10 +68,16 @@
 		7018FFD82589014100FE5078 /* PuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyViewController.swift; sourceTree = "<group>"; };
 		7018FFDD2589015900FE5078 /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
 		7018FFE22589017100FE5078 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		704ECFDF2597753C00D90E37 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		704ECFE32597809A00D90E37 /* SelectImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageView.swift; sourceTree = "<group>"; };
+		704ECFE62597840A00D90E37 /* AddButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonCell.swift; sourceTree = "<group>"; };
+		704ECFE92597856F00D90E37 /* PetPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPhotoCell.swift; sourceTree = "<group>"; };
 		7084F5D32595139800B1A934 /* ForgotPasswordSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSecondController.swift; sourceTree = "<group>"; };
 		7084F5D62595181600B1A934 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7084F5DD25951F5700B1A934 /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		7084F5E725952D7700B1A934 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		708EC39C2596D323008334B9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		708EC3A025970B4B008334B9 /* MyUserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserCardView.swift; sourceTree = "<group>"; };
 		70BC0878258904D00045B58B /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		70BC087D258905C80045B58B /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		70BC08812589066C0045B58B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -78,6 +91,7 @@
 		70BC08A225890EEE0045B58B /* TextFieldViewTypeOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewTypeOne.swift; sourceTree = "<group>"; };
 		70C70442258FF9AE006FCEF7 /* RootControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootControllerService.swift; sourceTree = "<group>"; };
 		70C704452590039D006FCEF7 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		70D2C3DD25978D68003B4634 /* PostPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoModel.swift; sourceTree = "<group>"; };
 		70DD2DB7258F70F6003BEAAA /* SmallDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDescriptionLabel.swift; sourceTree = "<group>"; };
 		70DD2DBA258F8250003BEAAA /* SignUpAuthNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAuthNumberController.swift; sourceTree = "<group>"; };
 		70DD2DBD258F8A46003BEAAA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -134,6 +148,7 @@
 		70006D1F2588FF9C00E507DB /* Petmily */ = {
 			isa = PBXGroup;
 			children = (
+				708EC39B2596D316008334B9 /* Models */,
 				70DD2DC0258F8C42003BEAAA /* Constants */,
 				70BC089825890C7A0045B58B /* Properties */,
 				70BC0887258907180045B58B /* Keys */,
@@ -189,6 +204,16 @@
 			path = My;
 			sourceTree = "<group>";
 		};
+		704ECFE22597807D00D90E37 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				704ECFE32597809A00D90E37 /* SelectImageView.swift */,
+				704ECFE62597840A00D90E37 /* AddButtonCell.swift */,
+				704ECFE92597856F00D90E37 /* PetPhotoCell.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		7084F5E625952D5B00B1A934 /* Post */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,9 +222,19 @@
 			path = Post;
 			sourceTree = "<group>";
 		};
+		708EC39B2596D316008334B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				708EC39C2596D323008334B9 /* UserModel.swift */,
+				70D2C3DD25978D68003B4634 /* PostPhotoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		70BC0877258904BE0045B58B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				704ECFE22597807D00D90E37 /* Post */,
 				70BC088B258907A10045B58B /* My */,
 				70BC0878258904D00045B58B /* TitleLabel.swift */,
 				70BC0894258909B00045B58B /* ClickableCardViewTypeOne.swift */,
@@ -209,6 +244,7 @@
 				70DD2DD2258FA699003BEAAA /* TextFieldViewForPassword.swift */,
 				70DD2DD5258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift */,
 				7084F5DD25951F5700B1A934 /* BlueButton.swift */,
+				704ECFDF2597753C00D90E37 /* CircleImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +283,7 @@
 			children = (
 				70BC088C258907B80045B58B /* UnLoggedInView.swift */,
 				70BC0891258908490045B58B /* LoggedInView.swift */,
+				708EC3A025970B4B008334B9 /* MyUserCardView.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -408,19 +445,26 @@
 				70BC087E258905C80045B58B /* ViewControllerExtension.swift in Sources */,
 				70BC0889258907260045B58B /* AuthKeys.swift in Sources */,
 				70BC0885258906950045B58B /* LocalDataService.swift in Sources */,
+				704ECFE42597809A00D90E37 /* SelectImageView.swift in Sources */,
 				70DD2DBE258F8A46003BEAAA /* LoadingView.swift in Sources */,
 				7084F5E825952D7700B1A934 /* PostViewController.swift in Sources */,
+				708EC39D2596D323008334B9 /* UserModel.swift in Sources */,
 				70BC089A25890C840045B58B /* ScreenSize.swift in Sources */,
+				704ECFE02597753C00D90E37 /* CircleImageView.swift in Sources */,
 				70C70443258FF9AE006FCEF7 /* RootControllerService.swift in Sources */,
 				70DD2DC2258F8C72003BEAAA /* ApiEndpoint.swift in Sources */,
+				70D2C3DE25978D68003B4634 /* PostPhotoModel.swift in Sources */,
 				70006D212588FF9C00E507DB /* AppDelegate.swift in Sources */,
+				704ECFE72597840A00D90E37 /* AddButtonCell.swift in Sources */,
 				7084F5DE25951F5700B1A934 /* BlueButton.swift in Sources */,
 				7084F5D42595139800B1A934 /* ForgotPasswordSecondController.swift in Sources */,
 				7018FFE32589017100FE5078 /* MyViewController.swift in Sources */,
 				70006D232588FF9C00E507DB /* SceneDelegate.swift in Sources */,
+				708EC3A125970B4B008334B9 /* MyUserCardView.swift in Sources */,
 				70BC0895258909B00045B58B /* ClickableCardViewTypeOne.swift in Sources */,
 				70DD2DD3258FA699003BEAAA /* TextFieldViewForPassword.swift in Sources */,
 				70DD2DCA258F92C7003BEAAA /* RegularExpressionService.swift in Sources */,
+				704ECFEA2597856F00D90E37 /* PetPhotoCell.swift in Sources */,
 				70BC088D258907B80045B58B /* UnLoggedInView.swift in Sources */,
 				70DD2DCD258F94B1003BEAAA /* EncodingService.swift in Sources */,
 				70BC0892258908490045B58B /* LoggedInView.swift in Sources */,

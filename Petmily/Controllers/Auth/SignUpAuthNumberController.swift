@@ -147,16 +147,17 @@ class SignUpAuthNumberController: UIViewController {
     // MARK: Helpers
     func makeNewAccount(smsAuthNumber:Int, userLoginPassword:String, userNickName:String, userPhoneNumber:String) {
         loadingView.isHidden = false
-        AuthService.shared.signUp(smsAuthNumber: smsAuthNumber, userLoginPassword: userLoginPassword, userNickName: userNickName, userPhoneNumber: userPhoneNumber) { (error, errorString, success, jwt) in
+        AuthService.shared.signUp(smsAuthNumber: smsAuthNumber, userLoginPassword: userLoginPassword, userNickName: userNickName, userPhoneNumber: userPhoneNumber) { (error, errorString, success, jwt, refreshJwt) in
             self.loadingView.isHidden = true
             let go = self.handleError(error: error, errorMessage: errorString, success: success)
             
             if go == false { return }
             
             guard let jwt = jwt else { return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 네트워크 상태가 좋지 않습니다. 나중에 다시 시도해주세요 ㅠ_ㅠ", handler: nil)}
+            guard let refreshJwt = refreshJwt else { return self.presentAlertWithOnlyOkayButton(title: nil, message: "현재 네트워크 상태가 좋지 않습니다. 나중에 다시 시도해주세요 ㅠ_ㅠ", handler: nil)}
             // 이제 이 jwt 가지고 로그인시켜주고 쌩쑈를 하면 된당
             let rootController = RootControllerService.shared.getRootController()
-            rootController.loginUser(jwt: jwt)
+            rootController.loginUser(jwt: jwt, refreshJwt:refreshJwt)
             self.dismiss(animated: true, completion: nil)
         }
     }
