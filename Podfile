@@ -9,4 +9,6 @@ target 'Petmily' do
   pod 'Alamofire', '~> 5.2'
   pod 'SDWebImage', '~> 5.0'
   pod 'YPImagePicker'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Storage'
 end

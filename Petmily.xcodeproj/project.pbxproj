@@ -13,6 +13,8 @@
 		70006D282588FF9C00E507DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70006D262588FF9C00E507DB /* Main.storyboard */; };
 		70006D2A2588FF9E00E507DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70006D292588FF9E00E507DB /* Assets.xcassets */; };
 		70006D2D2588FF9E00E507DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70006D2B2588FF9E00E507DB /* LaunchScreen.storyboard */; };
+		701027F225987CB200DEF63F /* CloudStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701027F125987CB200DEF63F /* CloudStorageService.swift */; };
+		701027F52598828200DEF63F /* SelectLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701027F42598828200DEF63F /* SelectLocationController.swift */; };
 		7018FFD52589002600FE5078 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFD42589002600FE5078 /* RootController.swift */; };
 		7018FFD92589014100FE5078 /* PuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFD82589014100FE5078 /* PuppyViewController.swift */; };
 		7018FFDE2589015900FE5078 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7018FFDD2589015900FE5078 /* PetViewController.swift */; };
@@ -57,6 +59,7 @@
 		70DD2DD0258F9B7F003BEAAA /* SignUpPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DCF258F9B7F003BEAAA /* SignUpPasswordController.swift */; };
 		70DD2DD3258FA699003BEAAA /* TextFieldViewForPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DD2258FA699003BEAAA /* TextFieldViewForPassword.swift */; };
 		70DD2DD6258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD2DD5258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift */; };
+		70E376A025987BC400716EA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70E3769F25987BC400716EA8 /* GoogleService-Info.plist */; };
 		A65F494A9AC628435EF66E21 /* Pods_Petmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0B3698BCD557BF5D3BAE40 /* Pods_Petmily.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +73,8 @@
 		70006D292588FF9E00E507DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70006D2C2588FF9E00E507DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70006D2E2588FF9E00E507DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		701027F125987CB200DEF63F /* CloudStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudStorageService.swift; sourceTree = "<group>"; };
+		701027F42598828200DEF63F /* SelectLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationController.swift; sourceTree = "<group>"; };
 		7018FFD42589002600FE5078 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		7018FFD82589014100FE5078 /* PuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyViewController.swift; sourceTree = "<group>"; };
 		7018FFDD2589015900FE5078 /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 		70DD2DCF258F9B7F003BEAAA /* SignUpPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordController.swift; sourceTree = "<group>"; };
 		70DD2DD2258FA699003BEAAA /* TextFieldViewForPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewForPassword.swift; sourceTree = "<group>"; };
 		70DD2DD5258FA7EB003BEAAA /* TouchableImageViewForLongTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableImageViewForLongTouch.swift; sourceTree = "<group>"; };
+		70E3769F25987BC400716EA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7BC640EDD1AE72E4E3EEE2E /* Pods-Petmily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petmily.release.xcconfig"; path = "Target Support Files/Pods-Petmily/Pods-Petmily.release.xcconfig"; sourceTree = "<group>"; };
 		FF0B3698BCD557BF5D3BAE40 /* Pods_Petmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,6 +181,7 @@
 				70006D292588FF9E00E507DB /* Assets.xcassets */,
 				70006D2B2588FF9E00E507DB /* LaunchScreen.storyboard */,
 				70006D2E2588FF9E00E507DB /* Info.plist */,
+				70E3769F25987BC400716EA8 /* GoogleService-Info.plist */,
 			);
 			path = Petmily;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 				7084F5E725952D7700B1A934 /* PostViewController.swift */,
 				70D2C3ED25979F88003B4634 /* SelectPetKindController.swift */,
 				70D2C3FA2597B004003B4634 /* SelectDateController.swift */,
+				701027F42598828200DEF63F /* SelectLocationController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -284,6 +292,7 @@
 				70C70442258FF9AE006FCEF7 /* RootControllerService.swift */,
 				7084F5D62595181600B1A934 /* UserService.swift */,
 				70D2C3FD2597B554003B4634 /* BirthdayService.swift */,
+				701027F125987CB200DEF63F /* CloudStorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -403,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70006D2D2588FF9E00E507DB /* LaunchScreen.storyboard in Resources */,
+				70E376A025987BC400716EA8 /* GoogleService-Info.plist in Resources */,
 				70006D2A2588FF9E00E507DB /* Assets.xcassets in Resources */,
 				70006D282588FF9C00E507DB /* Main.storyboard in Resources */,
 			);
@@ -489,7 +499,9 @@
 				704ECFEA2597856F00D90E37 /* PetPhotoCell.swift in Sources */,
 				70D2C3FB2597B004003B4634 /* SelectDateController.swift in Sources */,
 				70BC088D258907B80045B58B /* UnLoggedInView.swift in Sources */,
+				701027F52598828200DEF63F /* SelectLocationController.swift in Sources */,
 				70DD2DCD258F94B1003BEAAA /* EncodingService.swift in Sources */,
+				701027F225987CB200DEF63F /* CloudStorageService.swift in Sources */,
 				70BC0892258908490045B58B /* LoggedInView.swift in Sources */,
 				70DD2DD0258F9B7F003BEAAA /* SignUpPasswordController.swift in Sources */,
 				70BC0879258904D00045B58B /* TitleLabel.swift in Sources */,
@@ -654,6 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YV58Q28W8Z;
 				INFOPLIST_FILE = Petmily/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,6 +687,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YV58Q28W8Z;
 				INFOPLIST_FILE = Petmily/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

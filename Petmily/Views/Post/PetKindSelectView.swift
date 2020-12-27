@@ -42,6 +42,7 @@ class PetKindSelectView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
+        changeViewColorAccordingToTheme()
     }
     
     required init?(coder: NSCoder) {
@@ -86,11 +87,28 @@ class PetKindSelectView: UIView {
         layer.opacity = 1
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        changeViewColorAccordingToTheme()
+    }
+    
     // MARK: Selectors
     
     @objc func tapped() {
         guard let type = type else { return }
         self.delegate?.petKindSelectViewTapped(type:type)
+    }
+    
+    // MARK: Helpers
+    func changeViewColorAccordingToTheme() {
+        if traitCollection.userInterfaceStyle == .light {
+            // 라이트모드
+            forwardImageView.image = forwardImageView.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+            forwardImageView.tintColor = .black
+        }else {
+            // 다크모드
+            forwardImageView.image = forwardImageView.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+            forwardImageView.tintColor = .white
+        }
     }
 
 }

@@ -87,7 +87,6 @@ extension SelectDateController:DatePickerViewProtocol {
 
 extension SelectDateController:BlueButtonProtocol {
     func blueButtonTapped(sender: BlueButton) {
-        print("여기")
         guard let year = self.year else { return }
         guard let month = self.month else { return }
         guard let day = self.day else { return }

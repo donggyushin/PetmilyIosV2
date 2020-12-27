@@ -49,6 +49,15 @@ class PostViewController: UIViewController {
         return view
     }()
     
+    private lazy var locationSelectView:PetKindSelectView = {
+        
+        let view = PetKindSelectView()
+        view.delegate = self
+        view.type = "지역"
+        view.petKindLabel.text = "지역: "
+        return view
+    }()
+    
     private lazy var datePickerView:PetKindSelectView = {
         let view = PetKindSelectView()
         view.type = "생일"
@@ -115,9 +124,16 @@ class PostViewController: UIViewController {
         petKindSelectView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         petKindSelectView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
+        scrollView.addSubview(locationSelectView)
+        locationSelectView.translatesAutoresizingMaskIntoConstraints = false
+        locationSelectView.topAnchor.constraint(equalTo: petKindSelectView.bottomAnchor).isActive = true
+        locationSelectView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        locationSelectView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        locationSelectView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        
         scrollView.addSubview(datePickerView)
         datePickerView.translatesAutoresizingMaskIntoConstraints = false
-        datePickerView.topAnchor.constraint(equalTo: petKindSelectView.bottomAnchor).isActive = true
+        datePickerView.topAnchor.constraint(equalTo: locationSelectView.bottomAnchor).isActive = true
         datePickerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         datePickerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         datePickerView.heightAnchor.constraint(equalToConstant: 70).isActive = true
@@ -170,6 +186,10 @@ extension PostViewController:PetKindSelectViewProtocol {
             let selectDateController = SelectDateController()
             selectDateController.delegate = self
             navigationController?.pushViewController(selectDateController, animated: true)
+            break
+        case "지역":
+            let selectLocationController = SelectLocationController(collectionViewLayout: UICollectionViewFlowLayout())
+            navigationController?.pushViewController(selectLocationController, animated: true)
             break
         default:
             break
