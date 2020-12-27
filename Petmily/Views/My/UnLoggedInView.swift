@@ -21,7 +21,7 @@ class UnLoggedInView: UIView {
         card.label.text = "아직 펫밀리의 회원이 아니신가요?\n펫밀리에 가입하시고 반려동물들에게 더 좋은 세상을 선물해요!"
         card.delegate = self
         card.widthAnchor.constraint(equalToConstant: ScreenSize.shared.width * 0.9).isActive = true
-        card.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        card.heightAnchor.constraint(equalToConstant: ScreenSize.shared.height / 2).isActive = true
         return card
     }()
     

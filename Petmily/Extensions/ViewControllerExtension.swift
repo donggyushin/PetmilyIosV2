@@ -40,6 +40,23 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func presentAlertWithTwoButtons(title:String?, message:String, cancelHandler:((UIAlertAction) -> Void)?, acceptHandler:((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertController.Style.alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: cancelHandler)
+        alert.addAction(cancelAction)
+        let okayAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: acceptHandler)
+        alert.addAction(okayAction)
+        
+        
+        let messageAttributes:[NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 14)]
+          let messageString = NSAttributedString(string: message, attributes: messageAttributes)
+        alert.setValue(messageString, forKey: "attributedMessage")
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     func moveViewHalfWhenKeyboardAppeared() {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)

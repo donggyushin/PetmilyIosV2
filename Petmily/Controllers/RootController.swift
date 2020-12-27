@@ -102,6 +102,13 @@ class RootController: UITabBarController, UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController.tabBarItem.tag == 2 {
             
+            if AuthService.shared.isLoggedIn() == false {
+                self.presentAlertWithTwoButtons(title: "로그인이 필요한 기능입니다", message: "로그인 페이지로 이동하시겠습니까?", cancelHandler: nil) { (_) in
+                    self.presentAuthController()
+                }
+                return false
+            }
+            
             let postController = UINavigationController(rootViewController: PostViewController())
             postController.modalPresentationStyle = .fullScreen
             self.present(postController, animated: true, completion: nil)
@@ -110,6 +117,12 @@ class RootController: UITabBarController, UITabBarControllerDelegate {
         }else {
             return true
         }
+    }
+    
+    // MARK: Helpers
+    func presentAuthController() {
+        let authController = UINavigationController(rootViewController: AuthController())
+        self.present(authController, animated: true, completion: nil)
     }
 
 

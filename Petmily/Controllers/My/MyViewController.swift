@@ -76,8 +76,6 @@ class MyViewController: UIViewController {
 
 extension MyViewController:UnLoggedInViewProtocol {
     func redirectToAuthController(sender: UnLoggedInView) {
-        let authController = UINavigationController(rootViewController: AuthController())
-        authController.modalPresentationStyle = .fullScreen
-        self.present(authController, animated: true, completion: nil)
+        RootControllerService.shared.getRootController().presentAuthController()
     }
 }

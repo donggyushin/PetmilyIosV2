@@ -37,7 +37,7 @@ class ClickableCardViewTypeOne: UIView {
     // MARK: Configures
     func configureUI() {
         layer.cornerRadius = 8
-        
+        backgroundColor = .secondarySystemBackground
         addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
